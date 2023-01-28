@@ -1,7 +1,7 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "DRG Wiki Search",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Stupid-simple wiki search for DRG!",
     "icons": {
         "64": "icons/Site-logo-64.jpg",

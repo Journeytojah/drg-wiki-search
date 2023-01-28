@@ -1,13 +1,15 @@
-<img src="src/icons/icon_152.png"/>
+<img src="src/icons/Site-logo.webp"/>
 
-# Path of Exile Wiki search
+# Deep Rock Galactic Wiki search
 
-This is a browser extension designed to be used in Firefox, Google Chrome, and chromium-based browsers (such as MS Edge) by players of the popular ARPG - [Path of Exile](www.pathofexile.com).
+This is a fork of the Path of Exile Wiki search extension, credits go to [pm5k](https://github.com/pm5k) and the PoE community.
+
+This is a browser extension designed to be used in Firefox, Google Chrome, and chromium-based browsers (such as MS Edge) by players of [Deep Rock Galactic](https://www.deeprockgalactic.com/).
 The purpose of this extension is to provide two benefits:
 
-- An easy to use hotkeyed trigger (`ALT+W`) to enable users to search for information about the game using the [official community wiki](www.poewiki.net).
+- An easy to use hotkeyed trigger (`ALT+W`) to enable users to search for information about the game using the [official community wiki](https://deeprockgalactic.wiki.gg/).
 
-- As part of an ongoing outcry over the old wiki `pathofexile.fandom.com` employing user-hostile and predatory approaches via tracking, fingerprinting and advertising, this extension intercepts any request your browser sends to Fandom's domain for `path of exile` (all other fandom wiki's are not affected, neither are any other web page requests) and parses out the target of your journey (A.K.A what section of the fandom wiki you were going to) and directs you to the official community wiki instead, leaving you to land on the same exact page you were after, just in a friendlier, community-backed wiki.
+- As part of an ongoing outcry over the old wiki `deeprockgalactic.fandom.com` employing user-hostile and predatory approaches via tracking, fingerprinting and advertising, this extension intercepts any request your browser sends to Fandom's domain for `deep rock galactic` (all other fandom wiki's are not affected, neither are any other web page requests) and parses out the target of your journey (A.K.A what section of the fandom wiki you were going to) and directs you to the official community wiki instead, leaving you to land on the same exact page you were after, just in a friendlier, community-backed wiki.
 
 # Dev quickstart
 
@@ -46,7 +48,7 @@ We use Jest for testing. Run `pnpm run test` or `pnpm run test:watch`.
 
 ## Is this extension safe?
 
-Yes, it is. We do not enforce its use, we provide it as a means to simplify your life when searching for PoE related information and as a means to globally redirect your requests to the official wiki, instead of the ad-ridden Fandom site. The code that does this sits in two places:
+Yes, it is. We do not enforce its use, we provide it as a means to simplify your life when searching for DRG related information and as a means to globally redirect your requests to the official wiki, instead of the ad-ridden Fandom site. The code that does this sits in two places:
 
 - `src/background/background.js`
 - `src/ui/ui.js`
@@ -63,7 +65,7 @@ Absolutely not. This extension does not need anything from you to work. The only
 
 ## I found a bug, what do I do?
 
-[Raise your issues here!](https://github.com/Project-Path-of-Exile-Wiki/poe-wiki-search/issues)
+[Raise your issues here!](https://github.com/Journeytojah/drg-wiki-search/issues)
 
 ## I want to contribute, how do I do this?
 

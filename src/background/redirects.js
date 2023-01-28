@@ -9,36 +9,39 @@ function redirectFromFandom(requestDetails) {
     // We simply replace the destination target over the new wiki URL.
     // Then send it back to the browser to finish the request with.
     return {
-        redirectUrl: `https://www.poewiki.net/wiki/${target}`,
+        redirectUrl: `https://deeprockgalactic.wiki.gg/wiki/${target}`,
     }
 }
 
-// When we are making a search query containing the words "poe", "wiki" or "poewiki",
-// this function will prepend "site:poewiki.net" to the search, filtering out "poe", "wiki" and "poewiki".
+// When we are making a search query containing the words "drg", "wiki" or "drgwiki",
+// this function will prepend "site:deeprockgalactic.wiki.gg" to the search, filtering out "drg", "wiki" and "drgwiki".
 function redirectFromSearchEngine(requestDetails) {
     const url = new URL(requestDetails.url)
     const searchQuery = url.searchParams
         .get("q")
         .split(" ")
-        // Filter "empty" words (caused from consecutive spaces in the query), and the poewiki words we use to match redirects for.
-        .filter(qParam => qParam !== "" && !["poe", "wiki", "poewiki"].includes(qParam))
+        // Filter "empty" words (caused from consecutive spaces in the query), and the drgwiki words we use to match redirects for.
+        .filter(qParam => qParam !== "" && !["drg", "wiki", "drgwiki"].includes(qParam))
         .join("+")
 
-    let searchEngine = 'https://www.google.com/search?q=site:poewiki.net+';
+    let searchEngine = "https://www.google.com/search?q=site:deeprockgalactic.wiki.gg+"
 
     switch (url.host) {
         case "duckduckgo.com":
         case "www.duckduckgo.com":
-            searchEngine = 'https://www.duckduckgo.com/?q=site:poewiki.net+'
-            break;
+            searchEngine = "https://www.duckduckgo.com/?q=site:deeprockgalactic.wiki.gg+"
+            break
     }
     const redirectResult = searchEngine + searchQuery
 
-    // Return the redirect url with "site:poewiki.net" prepended to the search query
+    // Return the redirect url with "site:deeprockgalactic.wiki.gg" prepended to the search query
     return {
         redirectUrl: redirectResult
     }
 
 }
 
-export { redirectFromFandom, redirectFromSearchEngine }
+export {
+    redirectFromFandom,
+    redirectFromSearchEngine
+}

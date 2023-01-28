@@ -1,7 +1,7 @@
 // This is the URL we will use to append all your searches to.
 // If your search query directly matches a name of a wiki page - you will get taken
 // to this page directly. If not - you will be taken to a search results page.
-const defaultWikiURL = "https://www.poewiki.net/w/index.php?search="
+const defaultWikiURL = "https://deeprockgalactic.wiki.gg/index.php?search="
 
 // This just selects the search input box in the extension popup when the popup opens.
 // This way we reduce your action-to-search count to just `hotkey+search+ENTER`.
@@ -25,7 +25,7 @@ const handler = () => {
 
     // While typing in the search input, we listen for a keyUP event for the key ENTER.
     // If this is registered - we assume you pressed ENTER and proceed.
-    searchInput.addEventListener("keyup", function(event) {
+    searchInput.addEventListener("keyup", function (event) {
         if (event.keyCode === 13) {
             // Get the value of your search input
             const query = searchInput.value
@@ -34,11 +34,13 @@ const handler = () => {
             if (valid) {
                 // If not empty - ask your browser to open a new tab/window (based on your browser setting)
                 // which takes you to the wiki search / page.
-                chrome.tabs.create({url: `${defaultWikiURL}${query}`})
+                chrome.tabs.create({
+                    url: `${defaultWikiURL}${query}`
+                })
                 // Close the popup.
                 window.close()
             }
-            
+
         }
     })
 }
